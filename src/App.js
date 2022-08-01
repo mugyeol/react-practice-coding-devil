@@ -1,21 +1,22 @@
 import './App.css';
-import { DatePicker, message, Alert } from "antd";
-import 'antd/dist/antd.css';
-import {useState}  from 'react'
+import Login from './component/Login';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import EmptyPage from './component/EmptyPage';
+import Header from './component/Header';
+import Main from './component/Main';
 
 function App() {
-  const [date, setDate] = useState(null);
-  const handleChange = value => {
-    message.info(`Selected Date: ${value ? value.format('YYYY-MM-DD') : 'None'}`);
-    setDate(value);
-  };
   return (
-    <div style={{ width: 600, margin: '100px auto' }}>
-      <DatePicker onChange={handleChange} />
-      <div style={{ marginTop: 16 }}>
-        {/* Selected Date: {date ? date.format('YYYY-MM-DD') : 'None'} */}
-        <Alert message="Selected Date" description={date ? date.format('YYYY-MM-DD') : 'None'} />
-      </div>
+    <div>
+      <BrowserRouter>
+      <Header/>
+      <Routes>
+        <Route path='' element={<Login/>}/>
+        <Route path='main/:id' element={<Main/>}/>
+        <Route path='*' element={<EmptyPage/>}/>
+      </Routes>
+      </BrowserRouter>
+      
     </div>
   );
 }

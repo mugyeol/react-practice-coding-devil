@@ -1,0 +1,33 @@
+{
+  "users": [
+    {
+      "id": 220622,
+      "pwd": 1
+    },
+    {
+      "id": 220623,
+      "pwd": 1
+    },
+    {
+      "id": 220624,
+      "pwd": 1
+    },
+    {
+      "id": 220625
+    }
+  ],
+  "rooms": [
+    {
+      "id": 1,
+      "isBooked": false,
+      "memberCount": 0,
+      "name": "한라산"
+    },
+    {
+      "id": 2,
+      "isBooked": false,
+      "memberCount": 0,
+      "name": "다랑쉬"
+    }
+  ]
+}
